@@ -407,9 +407,9 @@ genericSTM32F103C.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
 
 #-- Optimizations
 genericSTM32F103C.menu.opt.osstd=Smallest (default)
-#genericSTM32F103C.menu.opt.oslto=Smallest Code with LTO
-#genericSTM32F103C.menu.opt.oslto.build.flags.optimize=-Os -flto
-#genericSTM32F103C.menu.opt.oslto.build.flags.ldspecs=-flto
+genericSTM32F103C.menu.opt.oslto=Smallest Code with LTO
+genericSTM32F103C.menu.opt.oslto.build.flags.optimize=-Os -flto
+genericSTM32F103C.menu.opt.oslto.build.flags.ldspecs=-flto -specs=nano.specs
 genericSTM32F103C.menu.opt.o1std=Fast (-O1)
 genericSTM32F103C.menu.opt.o1std.build.flags.optimize=-O1
 genericSTM32F103C.menu.opt.o1std.build.flags.ldspecs=
@@ -470,10 +470,15 @@ genericSTM32F103C6.menu.upload_method.serialMethod.upload.protocol=maple_serial
 genericSTM32F103C6.menu.upload_method.serialMethod.upload.tool=serial_upload
 genericSTM32F103C6.menu.upload_method.serialMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG
 
-genericSTM32F103C6.menu.upload_method.STLinkMethod=STLink
+genericSTM32F103C6.menu.upload_method.STLinkMethod=STLink (with SerialUSB)
 genericSTM32F103C6.menu.upload_method.STLinkMethod.upload.protocol=STLink
 genericSTM32F103C6.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
-genericSTM32F103C6.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+genericSTM32F103C6.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB
+
+genericSTM32F103C6.menu.upload_method.STLinkMethod_noUSB=STLink (no SerialUSB)
+genericSTM32F103C6.menu.upload_method.STLinkMethod_noUSB.upload.protocol=STLink
+genericSTM32F103C6.menu.upload_method.STLinkMethod_noUSB.upload.tool=stlink_upload
+genericSTM32F103C6.menu.upload_method.STLinkMethod_noUSB.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 
 
 genericSTM32F103C6.menu.upload_method.BMPMethod=BMP (Black Magic Probe)
 genericSTM32F103C6.menu.upload_method.BMPMethod.upload.protocol=gdb_bmp
@@ -503,9 +508,9 @@ genericSTM32F103C6.menu.cpu_speed.speed_128mhz.build.f_cpu=128000000L
 
 #-- Optimizations
 genericSTM32F103C6.menu.opt.osstd=Smallest (default)
-#genericSTM32F103C6.menu.opt.oslto=Smallest Code with LTO
-#genericSTM32F103C6.menu.opt.oslto.build.flags.optimize=-Os -flto
-#genericSTM32F103C6.menu.opt.oslto.build.flags.ldspecs=-flto
+genericSTM32F103C6.menu.opt.oslto=Smallest Code with LTO
+genericSTM32F103C6.menu.opt.oslto.build.flags.optimize=-Os -flto
+genericSTM32F103C6.menu.opt.oslto.build.flags.ldspecs=-flto -specs=nano.specs
 genericSTM32F103C6.menu.opt.o1std=Fast (-O1)
 genericSTM32F103C6.menu.opt.o1std.build.flags.optimize=-O1
 genericSTM32F103C6.menu.opt.o1std.build.flags.ldspecs=

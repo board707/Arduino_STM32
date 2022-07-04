@@ -57,7 +57,7 @@ extern char _lm_heap_end;
  * Get incr bytes more RAM (for use by the heap).  malloc() and
  * friends call this function behind the scenes.
  */
-void *_sbrk(int incr) {
+void __attribute__((used)) *_sbrk(int incr) {
     static void * pbreak = NULL; /* current program break */
     void * ret;
 
